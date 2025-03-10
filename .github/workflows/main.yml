@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ex250307a/hello-world-docker-action@v2
+        uses: BorklerCanCode/ex250307a@v2
         with:
           who-to-greet: 'Bonnie Borko'
       # Use the output from the `hello` step
