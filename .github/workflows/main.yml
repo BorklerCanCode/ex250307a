@@ -6,7 +6,7 @@ jobs:
     name: A job to say hello
     steps:
       - name: Hello world action step
-        id: hello
+        id: helloLocal
         uses: BorklerCanCode/ex250307a/hello-world-docker-action@v2
         with:
           who-to-greet: 'Bonnie Borko'
