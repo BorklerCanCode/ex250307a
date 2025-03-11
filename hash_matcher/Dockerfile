@@ -11,10 +11,15 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
+# Env's
+ENV CROSS_COMPILE_ARM64=aarch64-linux-gnu-
+ENV CROSS_COMPILE_X86_64=x86_64-linux-gnu-
+
 # Define a build script that handles both architectures
-COPY build.sh /build.sh
-RUN chmod +x /build.sh
+WORKDIR /usr/src/hash_matcher/
+COPY . .
+RUN chmod +x /usr/src/hash_matcher/build.sh
 
 # Set the entry point to the build script
-ENTRYPOINT ["/build.sh"]
+ENTRYPOINT ["/usr/src/hash_matcher/build.sh"]
 

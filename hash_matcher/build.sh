@@ -1,5 +1,8 @@
 #!/bin/bash
 
+##debug
+ls -lah /usr/src/hash_matcher
+
 # Set environment variables for cross-compilation
 ENV CROSS_COMPILE_ARM64=aarch64-linux-gnu-
 ENV CROSS_COMPILE_X86_64=x86_64-linux-gnu-
@@ -31,9 +34,22 @@ build_for_arch() {
     echo "Build for $arch complete."
 }
 
+##Announce important localitiesi
+file="./.dockerignore"
+if [ -e "$file" ]; then
+  echo "Attention: a .dockerignore exists, contents are:"
+  cat $file
+fi
+
+##Build some exe's
 # Build for ARM64
 build_for_arch "arm64" "$CROSS_COMPILE_ARM64" "Unix Makefiles"
 
 # Build for x86_64
 build_for_arch "x86_64" "$CROSS_COMPILE_X86_64" "Unix Makefiles"
+
+##Package some cpp into .debs
+
+##debug
+ls -lah /usr/src/hash_matcher
 
