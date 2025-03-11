@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
+        uses: ./hello-world-docker-action@v2
         id: hello
         with:
           who-to-greet: 'Bonnie B. Borko'
