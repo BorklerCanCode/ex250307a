@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Set environment variables for cross-compilation
+ENV CROSS_COMPILE_ARM64=aarch64-linux-gnu-
+ENV CROSS_COMPILE_X86_64=x86_64-linux-gnu-
+
 # Define the build function
 build_for_arch() {
     local arch=$1
@@ -7,12 +11,16 @@ build_for_arch() {
     local cmake_generator=$3
     local build_dir="build-$arch"
 
+    echo "Removing old build dir $build_dir"
+    rm -rf $build_dir
+
     echo "Building for $arch..."
 
     mkdir -p $build_dir
     cd $build_dir
-
-    cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain-$arch.cmake \
+ 
+    cp ../$arch/CMakeLists.txt ../CMakeLists.txt
+    cmake -DCMAKE_TOOLCHAIN_FILE=../$arch/toolchain-$arch.cmake \
           -DCMAKE_BUILD_TYPE=Release \
           -G "$cmake_generator" \
           ..

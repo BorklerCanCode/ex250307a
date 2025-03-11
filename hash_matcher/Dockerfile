@@ -11,10 +11,6 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-# Set environment variables for cross-compilation
-ENV CROSS_COMPILE_ARM64=aarch64-linux-gnu-
-ENV CROSS_COMPILE_X86_64=x86_64-linux-gnu-
-
 # Define a build script that handles both architectures
 COPY build.sh /build.sh
 RUN chmod +x /build.sh
