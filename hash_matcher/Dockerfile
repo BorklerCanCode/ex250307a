@@ -11,11 +11,7 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-# Env's
-ENV CROSS_COMPILE_ARM64=aarch64-linux-gnu-
-ENV CROSS_COMPILE_X86_64=x86_64-linux-gnu-
-
-# Define a build script that handles both architectures
+# Define a build script that handles multiple architectures
 WORKDIR /usr/src/hash_matcher/
 COPY . .
 RUN chmod +x /usr/src/hash_matcher/build.sh

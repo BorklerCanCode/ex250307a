@@ -51,5 +51,7 @@ build_for_arch "x86_64" "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 ##Package some cpp into .debs
 
 ##debug
-ls -lah /usr/src/hash_matcher
-
+ls -lah ./
+md5sum ./build-x86_64/hash_matcher.exe
+md5sum ./build-arm64/hash_matcher.exe
+cat .aws
