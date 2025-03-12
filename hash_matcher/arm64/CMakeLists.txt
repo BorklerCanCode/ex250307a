@@ -4,8 +4,6 @@
     set(CMAKE_CXX_COMPILER /usr/bin/aarch64-linux-gnu-g++)
     add_executable(hash_matcher.exe main.cpp)
 
-    #set(BUILD_NUMBER_FILENAME "BuildNumber.txt")
-    #file(READ ${CMAKE_SOURCE_DIR}/${BUILD_NUMBER_FILENAME} BUILD_NUMBER)
     set(CPACK_PACKAGE_VERSION "$ENV{BUILD_NUMBER}")
     set(CPACK_GENERATOR "DEB")
     set(CPACK_PACKAGE_VENDOR "is300Guy")
