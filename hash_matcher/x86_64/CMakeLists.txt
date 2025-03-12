@@ -1,6 +1,6 @@
     cmake_minimum_required(VERSION 3.19)
-    project(hash_matcher.exe)
-    add_executable(hash_matcher.exe main.cpp)
+    project(hash-matcher-x86-64)
+    add_executable(hash-matcher-x86-64 main.cpp)
 
     set(CPACK_PACKAGE_VERSION "$ENV{BUILD_NUMBER}")
     set(CPACK_GENERATOR "DEB")
