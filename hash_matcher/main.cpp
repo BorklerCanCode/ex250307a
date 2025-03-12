@@ -3,11 +3,12 @@
 
 int main() {
     #ifdef __aarch64__
-        std::cout << "Hello, ARM64!" << std::endl;
+        std::cout << "ARM64 platform detected" << std::endl;
     #elif __x86_64__
-        std::cout << "Hello, x86_64!" << std::endl;
+        std::cout << "x86_64 platform detected" << std::endl;
     #else
-        std::cout << "Hello, unknown architecture!" << std::endl;
+        std::cout << "WARNING: Uknown architecture detected." << std::endl;
+        return 10011;
     #endif
     return 0;
 }
