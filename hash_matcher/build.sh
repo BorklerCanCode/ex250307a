@@ -2,10 +2,13 @@
 echo "(Docker entrypoint) running  $0, starting cross-compiled exe and package build(s)."
 echo "Current directory is $PWD"
 
+##set project name and make available to CMake:
+CMPROJ=hash-matcher
+export CMPROJ
+
 ##set date based versioning string in UTC (strictly)
 BUILD_NUMBER="$(date -u +%Y.%m.%d-%H.%M)"
 echo -n $BUILD_NUMBER  > ./BuildNumber.txt
-echo $BUILD_NUMBER
 export BUILD_NUMBER
 
 # Set variables for cross-compilation target names
@@ -46,10 +49,14 @@ fi
 
 ##Build some exe's
 # Build for ARM64
-build_for_arch "arm64" "$CROSS_COMPILE_ARM64" "Unix Makefiles"
+ARCH="aarch64"
+export ARCH
+build_for_arch $ARCH "$CROSS_COMPILE_ARM64" "Unix Makefiles"
 
 # Build for x86_64
-build_for_arch "x86_64" "$CROSS_COMPILE_X86_64" "Unix Makefiles"
+ARCH="x86_64"
+export ARCH
+build_for_arch $ARCH "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 
 ##debug
 ls -lah ./
