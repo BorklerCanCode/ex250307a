@@ -1,4 +1,5 @@
 // main.cpp
+#include "build_number.hpp"
 #include <iostream>
 
 int main() {

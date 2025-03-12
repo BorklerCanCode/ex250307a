@@ -13,8 +13,8 @@ build_for_arch() {
     local cmake_generator=$3
     local build_dir="build-$arch"
 
-    echo "Removing old build dir $build_dir"
-    rm -rf $build_dir
+    #echo "Removing old build dir $build_dir"
+    #rm -rf $build_dir
 
     echo "Building for $arch..."
 
