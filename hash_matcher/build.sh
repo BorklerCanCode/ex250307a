@@ -3,7 +3,7 @@ echo "(Docker entrypoint) running  $0, starting cross-compiled exe and package b
 echo "Current directory is $PWD"
 
 ##set date based versioning string in UTC (strictly)
-echo "$(date +%Y.%m.%d-%H.%M -u)" > ./CMakeBuildNumberCache.txt
+echo -n "$(date -u +%Y.%m.%d-%H.%M)" > ./BuildNumber.txt
 
 # Set variables for cross-compilation target names
 CROSS_COMPILE_ARM64=aarch64-linux-gnu

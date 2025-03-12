@@ -1,23 +1,10 @@
     cmake_minimum_required(VERSION 3.19)
     project(hash_matcher.exe)
-    add_executable(hash_matcher.exe main.cpp build_number.hpp)
+    add_executable(hash_matcher.exe main.cpp)
 
-    #Get master directory
-    get_filename_component(MASTER_DIR ${CMAKE_SOURCE_DIR} DIRECTORY)
-    get_filename_component(MASTER_DIR ${MASTER_DIR} DIRECTORY)
-
+    set(BUILD_NUMBER_FILENAME "BuildNumber.txt")
+    file(READ ${CMAKE_SOURCE_DIR}/${BUILD_NUMBER_FILENAME} BUILD_NUMBER)
     set(CPACK_PACKAGE_VERSION "${BUILD_NUMBER}")
-    #Execute the script at compile time
-    add_custom_command(
-        TARGET hash_matcher.exe
-        PRE_BUILD
-        COMMAND ${CMAKE_COMMAND}
-                -DHEADER_DIR:PATH="${CMAKE_SOURCE_DIR}"
-                -DCACHE_DIR:PATH="${CMAKE_SOURCE_DIR}"
-                -DLANGUAGE:STRING="CXX"
-                -P "${CMAKE_SOURCE_DIR}/build_number.cmake"
-    )
-
     set(CPACK_GENERATOR "DEB")
     set(CPACK_PACKAGE_VENDOR "is300Guy")
     set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
