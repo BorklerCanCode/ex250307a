@@ -1,4 +1,4 @@
-##The .dockerignore can help secure or speed up containers
+##The .dockerignore file can help secure or speed up containers
 #basic minimals:
 .dockerignore
 Dockerfile

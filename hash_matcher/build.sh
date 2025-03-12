@@ -1,11 +1,10 @@
 #!/bin/bash
+echo "(Docker entrypoint) running  $0, starting cross-compiled exe and package build(s)."
+echo "Current directory is $PWD"
 
-##debug
-ls -lah /usr/src/hash_matcher
-
-# Set environment variables for cross-compilation
-ENV CROSS_COMPILE_ARM64=aarch64-linux-gnu-
-ENV CROSS_COMPILE_X86_64=x86_64-linux-gnu-
+# Set variables for cross-compilation target names
+CROSS_COMPILE_ARM64=aarch64-linux-gnu
+CROSS_COMPILE_X86_64=x86_64-linux-gnu
 
 # Define the build function
 build_for_arch() {
@@ -29,15 +28,16 @@ build_for_arch() {
           ..
 
     make -j$(nproc)
+    make package
 
     cd ..
     echo "Build for $arch complete."
 }
 
-##Announce important localitiesi
+##Announce important localities
 file="./.dockerignore"
 if [ -e "$file" ]; then
-  echo "Attention: a .dockerignore exists, contents are:"
+  echo "Attention: a .dockerignore file exists, contents are:"
   cat $file
 fi
 
@@ -48,10 +48,7 @@ build_for_arch "arm64" "$CROSS_COMPILE_ARM64" "Unix Makefiles"
 # Build for x86_64
 build_for_arch "x86_64" "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 
-##Package some cpp into .debs
-
 ##debug
 ls -lah ./
-md5sum ./build-x86_64/hash_matcher.exe
-md5sum ./build-arm64/hash_matcher.exe
-cat .aws
+find ./ | wc -l
+
