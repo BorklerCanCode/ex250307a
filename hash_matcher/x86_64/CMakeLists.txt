@@ -2,3 +2,14 @@
     project(hash_matcher.exe)
     add_executable(hash_matcher.exe main.cpp)
 
+    set(BUILD_NUMBER_FILENAME "BuildNumber.txt")
+    file(READ ${CMAKE_SOURCE_DIR}/${BUILD_NUMBER_FILENAME} BUILD_NUMBER)
+    set(CPACK_PACKAGE_VERSION "${BUILD_NUMBER}")
+    set(CPACK_GENERATOR "DEB")
+    set(CPACK_PACKAGE_VENDOR "is300Guy")
+    set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
+    set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Flight file integrity checker ($arch)")
+    set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
+    set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Droni.Mitchell@littledeb13.com")
+    include(CPack)
+
