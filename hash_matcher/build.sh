@@ -3,8 +3,8 @@ echo "(Docker entrypoint) running  $0, starting cross-compiled exe and package b
 echo "Current directory is $PWD"
 
 ##set date based versioning string in UTC (strictly)
-echo -n "$(date -u +%Y.%m.%d-%H.%M)" > ./BuildNumber.txt
 BUILD_NUMBER="$(date -u +%Y.%m.%d-%H.%M)"
+echo -n $BUILD_NUMBER  > ./BuildNumber.txt
 echo $BUILD_NUMBER
 export BUILD_NUMBER
 
