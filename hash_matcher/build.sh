@@ -2,6 +2,9 @@
 echo "(Docker entrypoint) running  $0, starting cross-compiled exe and package build(s)."
 echo "Current directory is $PWD"
 
+##set date based versioning string in UTC (strictly)
+echo "$(date +%Y.%m.%d-%H.%M -u)" > ./CMakeBuildNumberCache.txt
+
 # Set variables for cross-compilation target names
 CROSS_COMPILE_ARM64=aarch64-linux-gnu
 CROSS_COMPILE_X86_64=x86_64-linux-gnu
@@ -12,9 +15,6 @@ build_for_arch() {
     local cross_compile_prefix=$2
     local cmake_generator=$3
     local build_dir="build-$arch"
-
-    #echo "Removing old build dir $build_dir"
-    #rm -rf $build_dir
 
     echo "Building for $arch..."
 

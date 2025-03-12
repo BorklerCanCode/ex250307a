@@ -6,13 +6,14 @@
     get_filename_component(MASTER_DIR ${CMAKE_SOURCE_DIR} DIRECTORY)
     get_filename_component(MASTER_DIR ${MASTER_DIR} DIRECTORY)
 
+    set(CPACK_PACKAGE_VERSION "${BUILD_NUMBER}")
     #Execute the script at compile time
     add_custom_command(
         TARGET hash_matcher.exe
         PRE_BUILD
         COMMAND ${CMAKE_COMMAND}
                 -DHEADER_DIR:PATH="${CMAKE_SOURCE_DIR}"
-                -DCACHE_DIR:PATH="${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}"
+                -DCACHE_DIR:PATH="${CMAKE_SOURCE_DIR}"
                 -DLANGUAGE:STRING="CXX"
                 -P "${CMAKE_SOURCE_DIR}/build_number.cmake"
     )
@@ -20,7 +21,6 @@
     set(CPACK_GENERATOR "DEB")
     set(CPACK_PACKAGE_VENDOR "is300Guy")
     set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
-    set(CPACK_PACKAGE_VERSION "${BUILD_NUMBER}")
     set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Flight file integrity checker ($arch)")
     set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Droni.Mitchell@littledeb13.com")
