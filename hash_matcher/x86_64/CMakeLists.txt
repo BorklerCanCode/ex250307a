@@ -1,10 +1,8 @@
     cmake_minimum_required(VERSION 3.19)
-    project(hash_matcher.exe)
-    add_executable(hash_matcher.exe main.cpp)
+    project(hash-matcher-x86-64)
+    add_executable(hash-matcher-x86-64 main.cpp)
 
-    set(BUILD_NUMBER_FILENAME "BuildNumber.txt")
-    file(READ ${CMAKE_SOURCE_DIR}/${BUILD_NUMBER_FILENAME} BUILD_NUMBER)
-    set(CPACK_PACKAGE_VERSION "${BUILD_NUMBER}")
+    set(CPACK_PACKAGE_VERSION "$ENV{BUILD_NUMBER}")
     set(CPACK_GENERATOR "DEB")
     set(CPACK_PACKAGE_VENDOR "is300Guy")
     set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
