@@ -17,29 +17,43 @@ This utility can be used to test for lineup, build deviants/devations, corrupted
 Later versions can pass signals to the system to initiate emergency action based on the severity of the issue, especially in conjuction with a blacklist (wip).
 
 ## Building the application
+
 hash_matcher/build.sh can be run to invoke all the cmake and cpack functions.  This will create cross-compiled executables which are subsequently propogated by existing code and integrations.
+
 ### unit tests
+
 unit tests are integrated directly and the results are observable at local/Docker/Repo level.
 
 ### Docker 
+
 Docker files are integrated in the repo.
+
 As with any docker prokect, be mindful of the .dockerignore file and its function/contents.
 
 ### Other: kubernetes
+
 kubernetes cluster details tbd
 
 ## .deb package details
+
 ### installation
+
 The .deb can be fetched with wget `hash-matcher-aarch64-stable-Linux.deb`, then installed with:
+
 tbd wget example (from aws-s3?)
+
 <code>sudo dpkg -i `ls -t hash*.deb | head -1`</code>
 
 The .deb can be removed with:
+
 <code>sudo apt remove hash-matcher*</code>
 
 ## Architectural components and diagram:
+
 locations: repository (github) [pushes to->] package repo (tbd) [<-pulls from] targetArchs
+
 actions: tbd-github-actions | tbd-notifications (github) 
+
 code flow: errors(no csv, fnf, bad hash match) | sucess(blessed hash match)
 
 (supports local testing on docker, or native x86 and arm64 Linux systems)
