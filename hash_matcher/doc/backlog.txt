@@ -1,0 +1,5 @@
+#Backlog of add on features:
+Change lookup for .csv to key by hash, in case of multiple acceptable hashes for same file path per release-lineup
+Add a column for pass/fail -- specifically to allow blacklisting of a certain hash digest to ground UAV
+Add a column for severity, including prompts to ground/scuttle/Zero/FTS if design so deems
+
