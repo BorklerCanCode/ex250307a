@@ -10,6 +10,8 @@ export CMPROJ
 BUILD_NUMBER="$(date -u +%Y.%m.%d-%H.%M)"
 echo -n $BUILD_NUMBER  > ./BuildNumber.txt
 export BUILD_NUMBER
+echo "Attempting build number $BUILD_NUMBER using"
+echo `cmake --version | tr '\n' ' '`
 
 # Set variables for cross-compilation target names
 CROSS_COMPILE_ARM64=aarch64-linux-gnu
@@ -63,13 +65,17 @@ ls -lah ./
 echo "File/folder count for this build dir:" `find ./ | wc -l`
 
 ##run test of c++ code in local bash mode
-#if pwdi != /opt/$hashmatcherdir/ then set different thisarch/nonarch
+echo "Running basic test of build outout"
+#if pwd != /opt/$hashmatcherdir/ then set different thisarch/nonarch
 THISARCH=build-`arch`
 cd ./$THISARCH/
-echo "Execute test of compiled c++ code on target host $HOSTNAME running on `arch`"
+echo "Execute test of compiled c++ code on target host $HOSTNAME running on `arch` $(stat -c "%s%n" -- /.dockerenv 2>/dev/null)"
 echo "`uname -a`"
 cp ../`arch`/hashes.csv ./
 echo "test.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81" >> hashes.csv
 cp ../test.hex ./
 ./hash-matcher hashes.csv test.hex
+
+cat /.dockerenv
+ls -lah /.dockerenv
 
