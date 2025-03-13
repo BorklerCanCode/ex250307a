@@ -26,7 +26,7 @@ set(CPACK_DEB_COMPONENT_INSTALL YES)
 
 install(
     FILES ./$ENV{ARCH}/hashes.csv DESTINATION /opt/$ENV{CMPROJ}/
-    FILES ./data/dataLinesTestFile.hex DESTINATION /opt/$ENV{CMPROJ}/
+    FILES ./test.hex DESTINATION /opt/$ENV{CMPROJ}/
     PERMISSIONS
     OWNER_READ OWNER_WRITE
     GROUP_READ

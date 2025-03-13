@@ -62,10 +62,14 @@ build_for_arch $ARCH "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 ls -lah ./
 find ./ | wc -l
 
-##run test of c++ code
+##run test of c++ code in local bash mode
+#if pwdi != /opt/$hashmatcherdir/ then set different thisarch/nonarch
 THISARCH=build-`arch`
 cd ./$THISARCH/
 echo "Execute test of compiled c++ code on target host $HOSTNAME running on `arch`"
 echo "`uname -a`"
-./hash-matcher ../data/dataLinesTestFile.hex
+cp ../`arch`/hashes.csv ./
+echo "test.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81" >> hashes.csv
+cp ../test.hex ./
+./hash-matcher hashes.csv test.hex
 
