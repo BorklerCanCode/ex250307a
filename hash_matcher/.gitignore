@@ -1,5 +1,6 @@
 ##specific:
-./CMakeLists.txt
+CMakeLists.txt
+BuildNumber.txt
 
 ##generic
 # Logs
