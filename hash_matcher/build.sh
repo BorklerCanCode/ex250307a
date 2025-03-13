@@ -60,7 +60,7 @@ build_for_arch $ARCH "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 
 ##debug
 ls -lah ./
-echo Subdirectory file count for this build `find ./ | wc -l`
+echo "File/folder count for this build dir:" `find ./ | wc -l`
 
 ##run test of c++ code in local bash mode
 #if pwdi != /opt/$hashmatcherdir/ then set different thisarch/nonarch
