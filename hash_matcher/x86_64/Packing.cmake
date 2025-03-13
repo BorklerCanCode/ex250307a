@@ -7,7 +7,6 @@ set(CPACK_PACKAGE_VENDOR "is300Guy")
 set(CPACK_PACKAGE_NAME "${PROJECT_NAME}"
     CACHE STRING "The resulting package name"
 )
-# which is useful in case of packing only selected components instead of the whole thing
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Flight file integrity checker ($archs)"
     CACHE STRING "Package description for the package metadata"
 )
@@ -25,7 +24,21 @@ set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)#ONE_PER_GROUP)
 # without this you won't be able to pack only specified component
 set(CPACK_DEB_COMPONENT_INSTALL YES)
 
-install(FILES ./build-$ENV{ARCH}/hash-matcher DESTINATION /opt/$ENV{CMPROJ})
+install(
+    FILES ./$ENV{ARCH}/hashes.csv DESTINATION /opt/$ENV{CMPROJ}/
+    FILES ./data/dataLinesTestFile.hex DESTINATION /opt/$ENV{CMPROJ}/
+    PERMISSIONS
+    OWNER_READ OWNER_WRITE
+    GROUP_READ
+    WORLD_READ
+)
+
+install(FILES ./build-$ENV{ARCH}/hash-matcher DESTINATION /opt/$ENV{CMPROJ}
+    PERMISSIONS
+    OWNER_READ OWNER_WRITE OWNER_EXECUTE
+    GROUP_READ GROUP_EXECUTE
+    WORLD_READ WORLD_EXECUTE
+)
 
 include(CPack)
 

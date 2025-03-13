@@ -62,3 +62,10 @@ build_for_arch $ARCH "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 ls -lah ./
 find ./ | wc -l
 
+##run test of c++ code
+THISARCH=build-`arch`
+cd ./$THISARCH/
+echo "Execute test of compiled c++ code on target host $HOSTNAME running on `arch`"
+echo "`uname -a`"
+./hash-matcher ../data/dataLinesTestFile.hex
+
