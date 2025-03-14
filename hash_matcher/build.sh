@@ -6,6 +6,10 @@ echo "Current directory is $PWD"
 CMPROJ=hash-matcher
 export CMPROJ
 
+##detect live arch
+LIVEARCH=`arch`
+export LIVEARCH
+
 ##set date based versioning string in UTC (strictly)
 BUILD_NUMBER="$(date -u +%Y.%m.%d-%H.%M)"
 echo -n $BUILD_NUMBER  > ./BuildNumber.txt
@@ -67,8 +71,8 @@ echo "File/folder count for this build dir:" `find ./ | wc -l`
 ##run test of c++ code in local bash mode
 echo "Running basic test of build outout"
 #if pwd != /opt/$hashmatcherdir/ then set different thisarch/nonarch
-THISARCH=build-`arch`
-cd ./$THISARCH/
+BLDARCH=build-`arch`
+cd ./$BLDARCH/
 echo "Execute test of compiled c++ code on target host $HOSTNAME running on `arch` $(stat -c "%s%n" -- /.dockerenv 2>/dev/null)"
 echo "`uname -a`"
 cp ../`arch`/hashes.csv ./

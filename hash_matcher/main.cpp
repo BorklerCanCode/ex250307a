@@ -6,6 +6,10 @@
 #include <vector>
 #include <cstdlib>
 
+int add(int a, int b) {
+        return a + b;
+    }
+
 std::string calculate_sha256(const std::string& filename) {
     std::ifstream file(filename, std::ios::binary);
 

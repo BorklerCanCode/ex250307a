@@ -1,9 +1,4 @@
-    cmake_minimum_required(VERSION 3.19)
-    #project($ENV{CMPROJ}-$ENV{ARCH}) #define PROJECT_NAME
-    add_executable($ENV{CMPROJ} main.cpp)
+    # x86_64 custom conditions
 
-    include(./$ENV{ARCH}/Packing.cmake)
-
-    # Include the AddCatch2 module
-    include(./cmake/AddCatch2.cmake)
-
+    #get_target_property(OUT Target LINK_LIBRARIES)
+    #message(STATUS ${OUT})
