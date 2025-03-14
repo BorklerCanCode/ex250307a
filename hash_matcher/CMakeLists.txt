@@ -12,6 +12,7 @@
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
     if($ENV{ARCH} STREQUAL $ENV{LIVEARCH})
+        add_subdirectory(cmake)
         add_subdirectory(src)
         add_subdirectory(test)
     endif()
