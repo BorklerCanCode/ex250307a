@@ -14,7 +14,7 @@ filename: the file to be inspected for integrity pre or mid flight.
 
 This utility can be used to test for lineup, build deviants/devations, corrupted or even compromised systems.
 
-Later versions can pass signals to the system to initiate emergency action based on the severity of the issue, especially in conjuction with a blacklist (wip).
+Later versions can pass signals to the system to initiate emergency action based on the severity of the issue, especially in conjuction with a blacklist (wip).  Blacklist functionality can be extended to identifying .deb packages via release file's sha, making lineup review a single action.
 
 ## Building the application
 
