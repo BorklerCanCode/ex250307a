@@ -33,7 +33,7 @@ build_for_arch() {
     mkdir -p $build_dir
     cd $build_dir
  
-    #cp ../$arch/CMakeLists.txt ../CMakeLists.txt
+    ###cp ../$arch/CMakeLists.txt ../CMakeLists.txt
     cmake -DCMAKE_TOOLCHAIN_FILE=../$arch/toolchain-$arch.cmake \
           -DCMAKE_BUILD_TYPE=Release \
           -G "$cmake_generator" \
