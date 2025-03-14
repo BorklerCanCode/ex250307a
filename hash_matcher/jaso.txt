@@ -1,0 +1,19 @@
+catch2 example works for x86 only
+https://github.com/rutura/CMakeSeries/tree/main/Ep023
+fails as-is for aarch64 render (makes garbage in terminal)
+OR/also until I tie it in to my main.cpp's hash-matcher
+
+
+same issue with gtest
+https://github.com/rutura/CMakeSeries/tree/main/Ep022
+fails as-is for aarch64 render (makes garbage in terminal)
+OR/also until I tie it in to my main.cpp's hash-matcher
+
+PS
+my hash-matcher calls /usr/bin/sha256sum
+because using the openssl sha.h was gnarly
+some kind of oddness about how ubuntu 22.04
+is setup with openssl
+
+not planning on fixing this as timeline and todos are crunched
+BUT how badly would you judge a candiate for this work around?
