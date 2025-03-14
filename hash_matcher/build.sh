@@ -29,7 +29,7 @@ build_for_arch() {
     mkdir -p $build_dir
     cd $build_dir
  
-    cp ../$arch/CMakeLists.txt ../CMakeLists.txt
+    #cp ../$arch/CMakeLists.txt ../CMakeLists.txt
     cmake -DCMAKE_TOOLCHAIN_FILE=../$arch/toolchain-$arch.cmake \
           -DCMAKE_BUILD_TYPE=Release \
           -G "$cmake_generator" \
@@ -75,7 +75,4 @@ cp ../`arch`/hashes.csv ./
 echo "test.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81" >> hashes.csv
 cp ../test.hex ./
 ./hash-matcher hashes.csv test.hex
-
-cat /.dockerenv
-ls -lah /.dockerenv
 
