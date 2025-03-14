@@ -12,7 +12,7 @@ csv_path: a pre-filled csv with the format "/absolute/path/to/file,<Expectedsha2
 
 filename: the file to be inspected for integrity pre or mid flight.
 
-This utility can be used to test for lineup, build deviants/devations, corrupted or even compromised systems.
+This utility can be used to test for lineup, build deviants/devations, corrupted or even compromised systems.  In a Linux env, entire read-only paritions can be checked, too with shell command `sha256sum /dev/mmcblk0p9`, or likewise for `/dev/nvme0n1p9`, `/dev/sda9`, etc., where the output string can be catalogued and committed to the hashes.csv file.
 
 Later versions can pass signals to the system to initiate emergency action based on the severity of the issue, especially in conjuction with a blacklist (wip).  Blacklist functionality can be extended to identifying .deb packages via release file's sha, making lineup review a single action.
 
