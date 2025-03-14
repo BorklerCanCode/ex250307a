@@ -1,3 +1,4 @@
+#define CATCH_CONFIG_RUNNER // Configure catch to use your main, and not its own.
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -5,8 +6,9 @@
 #include <iomanip>
 #include <vector>
 #include <cstdlib>
+#include "main.h"
 
-int add(int a, int b) {
+int addd(int a, int b) {
         return a + b;
     }
 

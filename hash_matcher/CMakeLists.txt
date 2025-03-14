@@ -5,6 +5,7 @@
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
     add_executable($ENV{CMPROJ} main.cpp)
+    add_library($ENV{CMPROJ}-lib main.cpp)
     include(./$ENV{ARCH}/CMakeLists.txt)
     include(./$ENV{ARCH}/Packing.cmake)
 

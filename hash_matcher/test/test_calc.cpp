@@ -1,8 +1,23 @@
 //working example from https://github.com/rutura/CMakeSeries/tree/main/Ep023
 //file will be completely replaced
 #include <catch2/catch_test_macros.hpp>
-#include "calculator.h"
+//////#include "calculator.h"
+#include "../main.h"
+#include "../main.cpp"
+//////#include <catch.hpp>
 
+TEST_CASE("Pass Tests")
+{
+    REQUIRE(1 == 1);
+}
+
+TEST_CASE("Fail test")
+{
+    REQUIRE(1 == 0);
+}
+
+//////these are not needed rn
+/*
 TEST_CASE("CalculatorTest - Add", "[Calculator]") {
     Calculator calc;
     REQUIRE(calc.add(2, 3) == 5);
@@ -35,3 +50,4 @@ TEST_CASE("CalculatorTest - Mod", "[Calculator]") {
     REQUIRE(calc.mod(6, 4) == 2);
     REQUIRE(calc.mod(5, 2) == 1);
 }
+*/
