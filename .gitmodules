@@ -1,0 +1,3 @@
+[submodule "hash_matcher/externals/externals/Catch2"]
+	path = hash_matcher/externals/externals/Catch2
+	url = https://github.com/catchorg/Catch2.git
