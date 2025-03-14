@@ -1,3 +1,3 @@
 /usr/bin/md5sum,0add96d23fc26b31a99a3914625cb2375a0a876de88698c6d1d2762989a73591
 /usr/include/openssl/sha.h,06500535b9b3d9742e745558dc02e52d0df6d75b038457d4f6c374ed68d39eaf
-/opt/hash-matcher/data/dataLinesTestFile.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81
+/opt/hash-matcher/test.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81

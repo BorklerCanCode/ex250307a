@@ -2,7 +2,7 @@
 
 ## Overview
 
-This CICD Pipeline exercise uses gitOps to build and test a hash-matcher executable compiled for linux-gnu with c++/g++ for x86_65 and aarch64 (arm64) systems.
+This CI/CD Pipeline exercise uses gitOps to build and test a hash-matcher executable compiled for linux-gnu with c++/g++ for x86_65 and aarch64 (arm64) systems.
 
 The resulting binaries are auto-tested with Docker and .deb packages for each architecture are created with autoversioning iaw Debian package naming policy §3.2.1.
 
