@@ -1,0 +1,12 @@
+Task:app-deps
+  Cycle: 30 days
+  Duty: Compile without caches, update deps as needed
+  Burden: 30 minutes
+Task:cicd-deps
+  Cycle: 90 days
+  Duty: update cmake as needed; update catch2 as needed;
+  Burden: 90 minutes;
+Task:os-deps
+  Cycle: 365 days
+  Duty: check major requirements such as Operating System(s).
+  Burden: 40 minutes
