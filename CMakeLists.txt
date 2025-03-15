@@ -15,7 +15,7 @@
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-    #Detect native arch matched compiled arch
+    ##Detect native arch matched compiled arch
     if($ENV{ARCH} STREQUAL $ENV{LIVEARCH})
         add_subdirectory(test)
     endif()
