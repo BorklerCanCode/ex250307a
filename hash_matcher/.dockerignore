@@ -1,9 +1,0 @@
-##The .dockerignore file can help secure or speed up containers
-#basic minimals:
-.dockerignore
-Dockerfile
-.aws
-.git
-.env
-.local
-
