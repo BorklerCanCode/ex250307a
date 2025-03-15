@@ -77,6 +77,7 @@ ARCH="x86_64"
 export ARCH
 build_for_arch $ARCH "$CROSS_COMPILE_X86_64" "Unix Makefiles"
 
+echo "########################### INFO ############################"
 ##debug
 ls -lah ./
 echo "File/folder count for this build dir:" `find ./ | wc -l`
@@ -91,5 +92,19 @@ echo "`uname -a`"
 cp ../`arch`/hashes.csv ./
 echo "test.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81" >> hashes.csv
 cp ../test.hex ./
-./hash-matcher hashes.csv test.hex
+./$CMPROJ hashes.csv test.hex
+
+echo "########################### DEBUG ###########################"
+cd ../
+NEWESTDEB=`find ./build-aarch64 -type f -name \*.deb | grep CPack | head -n 1`
+#echo `dpkg-deb -c $NEWESTDEB | wc -l` `dpkg-deb -c $NEWESTDEB | grep "hmatch/hmatch"`
+echo deb contains `dpkg-deb -c $NEWESTDEB | wc -l` files including `dpkg-deb -c $NEWESTDEB | grep /opt/hmatch/hmatch`
+ls -lah $NEWESTDEB
+file ./build-aarch64/$CMPROJ
+
+NEWESTDEB=`find ./build-x86_64 -type f -name \*.deb | grep CPack | head -n 1`
+echo deb contains `dpkg-deb -c $NEWESTDEB | wc -l` files including `dpkg-deb -c $NEWESTDEB | grep /opt/hmatch/hmatch`
+ls -lah $NEWESTDEB
+file ./build-x86_64/$CMPROJ
+
 
