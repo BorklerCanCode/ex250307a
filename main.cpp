@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "./src/calculator.h"
+//#include "./src/calculator.h"
+#include "calculator.h"
 
 int main () {
     Calculator calc;

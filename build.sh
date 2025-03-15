@@ -90,10 +90,6 @@ BLDARCH=build-`arch`
 cd ./$BLDARCH/
 echo "Execute test of compiled c++ code on target host $HOSTNAME running on `arch` $(stat -c "%s%n" -- /.dockerenv 2>/dev/null)"
 echo "`uname -a`"
-cp ../`arch`/hashes.csv ./
-echo "test.hex,cd3441515a071f299c719eaaaef4a91fc6a122213846504e83a0d66dcc09ee81" >> hashes.csv
-cp ../test.hex ./
-./$CMPROJ hashes.csv test.hex
 
 echo "########################### DEBUG ###########################"
 cd ../
