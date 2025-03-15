@@ -49,7 +49,8 @@ locations: repository (github) [pushes to->] package repo (tbd) [<-pulls from] t
 actions: tbd-github-actions | tbd-notifications (github)
 
 code flow:
-```
+
+```shell
 The Checker object implements a function for right and left payloads, as
 check.left(payload=true,sensor=true) and check.right(payload=true,sensor=true) 
 or 
@@ -58,9 +59,9 @@ payload loaded and ready for launch? left
 1*1=1
 payload loaded and ready for launch? right
 1*1=1
-payload fired and no longer detectd? left
+payload fired and no longer detected? left
 0*0=0
-payload fired and no longer detectd? left
+payload fired and no longer detected? left
 0*0=0
 ...simulated failures of hard mount points in future version
 ```
