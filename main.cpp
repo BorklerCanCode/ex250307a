@@ -12,6 +12,8 @@ int main () {
     std::cout << "left(0,0): " << check.left(0,0) << std::endl;
     std::cout << "right(0,0): " << check.right(0,0) << std::endl;
     return 0;
+
+    //tool version will take inputs (int , int, side) and call check
 }
 
 

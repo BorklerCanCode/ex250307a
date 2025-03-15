@@ -7,7 +7,8 @@ TEST_CASE("Pass Tests"){
     REQUIRE(1 == 1);
 }
 
-//testing checking payload detection and actuator conditions
+////testing checking payload detection and actuator conditions
+//(actuator, detector)
 TEST_CASE("CheckerTest - both loaded", "[Checker]") {
     Checker check;
     REQUIRE(check.left(1, 1) == 1);
