@@ -6,7 +6,7 @@
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
     add_executable($ENV{CMPROJ} main.cpp)
-    target_link_libraries(goose PRIVATE calculator)
+    target_link_libraries(goose PRIVATE checker)
 
     include(./$ENV{ARCH}/CMakeLists.txt)
     include(./cmake/Packing.cmake)

@@ -1,15 +1,16 @@
 #include <iostream>
 
-//#include "./src/calculator.h"
-#include "calculator.h"
+#include "checker.h"
 
 int main () {
-    Calculator calc;
-    std::cout << "add(10,4): " << calc.add(10,4) << std::endl;
-    std::cout << "sub(10,4): " << calc.sub(10,4) << std::endl;
-    std::cout << "mul(10,4): " << calc.mul(10,4) << std::endl;
-    std::cout << "div(10,4): " << calc.div(10,4) << std::endl;
-    std::cout << "mod(10,4): " << calc.mod(10,4) << std::endl;
+    Checker check;
+    //play through payload detection and actuator conditions
+    //loaded
+    std::cout << "left(1,1): " << check.left(1,1) << std::endl;
+    std::cout << "right(1,1): " << check.right(1,1) << std::endl;
+    //fired
+    std::cout << "left(0,0): " << check.left(0,0) << std::endl;
+    std::cout << "right(0,0): " << check.right(0,0) << std::endl;
     return 0;
 }
 
