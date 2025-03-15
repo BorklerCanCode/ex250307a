@@ -107,4 +107,6 @@ echo deb contains `dpkg-deb -c $NEWESTDEB | wc -l` files including `dpkg-deb -c 
 ls -lah $NEWESTDEB
 file ./build-x86_64/$CMPROJ
 
+file ./build-x86_64/test/unit_tests
+./build-x86_64/test/unit_tests
 

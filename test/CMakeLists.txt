@@ -1,7 +1,7 @@
     #cmake list for unit test integrations
     include(AddCatch2)
     
-    add_executable(unit_tests test_calc.cpp)
+    add_executable(unit_tests test_hmatching.cpp)
     target_link_libraries(unit_tests PRIVATE calculator Catch2::Catch2WithMain)
     #target_link_libraries(unit_tests PRIVATE $ENV{CMPROJ} Catch2::Catch2WithMain)
  

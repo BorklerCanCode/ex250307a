@@ -2,7 +2,7 @@
 #include <catch2/catch_test_macros.hpp>
 //////#include "calculator.h"
 #include "../main.h"
-#include "../main.cpp"
+//notWant//#include "../main.cpp"
 //////#include <catch.hpp>
 
 TEST_CASE("Pass Tests")
