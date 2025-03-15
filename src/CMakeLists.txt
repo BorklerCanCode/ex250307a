@@ -1,3 +1,3 @@
-    add_library(calculator calculator.cpp)
-    target_include_directories(calculator PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+    add_library(checker checker.cpp)
+    target_include_directories(checker PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 

@@ -1,50 +1,34 @@
 //////file will be completely replaced
 #include <catch2/catch_test_macros.hpp>
-#include "calculator.h"
+#include "checker.h"
 
-TEST_CASE("Pass Tests")
-{
+//sanity check
+TEST_CASE("Pass Tests"){
     REQUIRE(1 == 1);
 }
 
-TEST_CASE("Fail test")
-{
-    REQUIRE(1 == 0);
+//testing checking payload detection and actuator conditions
+TEST_CASE("CheckerTest - both loaded", "[Checker]") {
+    Checker check;
+    REQUIRE(check.left(1, 1) == 1);
+    REQUIRE(check.right(1, 1) == 1);
 }
 
-//////these are not needed rn
-/*
-TEST_CASE("CalculatorTest - Add", "[Calculator]") {
-    Calculator calc;
-    REQUIRE(calc.add(2, 3) == 5);
-    REQUIRE(calc.add(-2, 3) == 1);
-    REQUIRE(calc.add(0, 0) == 0);
+TEST_CASE("CheckerTest - left fired right loaded", "[Checker]") {
+    Checker check;
+    REQUIRE(check.left(0, 0) == 0);
+    REQUIRE(check.right(1, 1) == 1);
 }
 
-TEST_CASE("CalculatorTest - Sub", "[Calculator]") {
-    Calculator calc;
-    REQUIRE(calc.sub(5, 3) == 2);
-    REQUIRE(calc.sub(3, 5) == -2);
-    REQUIRE(calc.sub(0, 0) == 0);
+TEST_CASE("CheckerTest - left loaded right fired", "[Checker]") {
+    Checker check;
+    REQUIRE(check.left(1, 1) == 1);
+    REQUIRE(check.right(0, 0) == 0);
 }
 
-TEST_CASE("CalculatorTest - Mul", "[Calculator]") {
-    Calculator calc;
-    REQUIRE(calc.mul(2, 3) == 6);
-    REQUIRE(calc.mul(-2, 3) == -6);
-    REQUIRE(calc.mul(0, 5) == 0);
+TEST_CASE("CheckerTest - both fired", "[Checker]") {
+    Checker check;
+    REQUIRE(check.left(0, 0) == 0);
+    REQUIRE(check.right(0, 0) == 0);
 }
-
-TEST_CASE("CalculatorTest - Div", "[Calculator]") {
-    Calculator calc;
-    REQUIRE(calc.div(6, 3) == 2);
-    REQUIRE(calc.div(5, 2) == 2);
-}
-
-TEST_CASE("CalculatorTest - Mod", "[Calculator]") {
-    Calculator calc;
-    REQUIRE(calc.mod(6, 4) == 2);
-    REQUIRE(calc.mod(5, 2) == 1);
-}
-*/
 
