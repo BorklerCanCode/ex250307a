@@ -1,5 +1,4 @@
-//working example from https://github.com/rutura/CMakeSeries/tree/main/Ep023
-//file will be completely replaced
+//////file will be completely replaced
 #include <catch2/catch_test_macros.hpp>
 //////#include "calculator.h"
 #include "../main.h"
