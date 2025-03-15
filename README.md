@@ -10,19 +10,19 @@ Later versions will have error injection, which could pass signals to the system
 
 
 
-## Building the application
+## Building the Application
 
-this repo's ./build.sh can be run to invoke all the cmake and cpack functions.  This will create cross-compiled executables which are subsequently propogated by existing code and integrations.
+This repo's ./build.sh can be run to invoke all the cmake and cpack functions.  This will create cross-compiled executables which are subsequently propogated by existing code and integrations.
 
-### unit tests
+### Unit Tests
 
-unit tests are integrated directly and the results are observable at local/Docker/Repo level.
+Unit tests are integrated directly and the results are observable at local/Docker/Repo level.
 
 ### Docker
 
 Docker files are integrated in the repo.
 
-As with any docker prokect, be mindful of the .dockerignore file and its function/contents.
+As with any docker project, be mindful of the .dockerignore file and its function/contents.
 
 ### Other: kubernetes
 
@@ -30,7 +30,7 @@ kubernetes cluster details tbd
 
 ## .deb package details
 
-### installation
+### Installation
 
 The .deb can be fetched with wget `hmatch-aarch64-stable-Linux.deb`, then installed with:
 
@@ -42,14 +42,14 @@ The .deb can be removed with:
 
 <code>sudo apt remove hmatch*</code>
 
-## Architectural components and diagram:
+## Architectural Components and Diagram:
 
 locations: repository (github) [pushes to->] package repo (tbd) [<-pulls from] targetArchs
 
 actions: tbd-github-actions | tbd-notifications (github)
 
 code flow:
-<code>
+```
 The Checker object implements a function for right and left payloads, as
 check.left(payload=true,sensor=true) and check.right(payload=true,sensor=true) 
 or 
@@ -63,7 +63,7 @@ payload fired and no longer detectd? left
 payload fired and no longer detectd? left
 0*0=0
 ...simulated failures of hard mount points in future version
-</code>
+```
 
 
 (supports local testing on docker, or native x86 and arm64 Linux systems)
