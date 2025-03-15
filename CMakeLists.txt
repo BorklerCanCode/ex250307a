@@ -17,7 +17,7 @@
 
     #Detect native arch matched compiled arch
     if($ENV{ARCH} STREQUAL $ENV{LIVEARCH})
-        ##add_subdirectory(test)
+        add_subdirectory(test)
     endif()
 
     target_include_directories(goose PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}) 
