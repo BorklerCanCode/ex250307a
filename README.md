@@ -1,12 +1,12 @@
-# hash-matcher, a functional cross-compiled c++ project
+# hmatch, a functional cross-compiled c++ project
 
 ## Overview
 
-This CI/CD Pipeline exercise uses gitOps to build and test a hash-matcher executable compiled for linux-gnu with c++/g++ for x86_65 and aarch64 (arm64) systems.
+This CI/CD Pipeline exercise uses gitOps to build and test a hmatch executable compiled for linux-gnu with c++/g++ for x86_65 and aarch64 (arm64) systems.
 
 The resulting binaries are auto-tested with Docker and .deb packages for each architecture are created with autoversioning iaw Debian package naming policy §3.2.1.
 
-hash-matcher can be called in the format `hash-matcher <csv_path> <filename>`, given:
+hmatch can be called in the format `hmatch <csv_path> <filename>`, given:
 
 csv_path: a pre-filled csv with the format "/absolute/path/to/file,<Expectedsha256sum>"
 
@@ -18,7 +18,7 @@ Later versions can pass signals to the system to initiate emergency action based
 
 ## Building the application
 
-hash_matcher/build.sh can be run to invoke all the cmake and cpack functions.  This will create cross-compiled executables which are subsequently propogated by existing code and integrations.
+hmatch's ./build.sh can be run to invoke all the cmake and cpack functions.  This will create cross-compiled executables which are subsequently propogated by existing code and integrations.
 
 ### unit tests
 
@@ -38,7 +38,7 @@ kubernetes cluster details tbd
 
 ### installation
 
-The .deb can be fetched with wget `hash-matcher-aarch64-stable-Linux.deb`, then installed with:
+The .deb can be fetched with wget `hmatch-aarch64-stable-Linux.deb`, then installed with:
 
 tbd wget example (from aws-s3?)
 
@@ -46,7 +46,7 @@ tbd wget example (from aws-s3?)
 
 The .deb can be removed with:
 
-<code>sudo apt remove hash-matcher*</code>
+<code>sudo apt remove hmatch*</code>
 
 ## Architectural components and diagram:
 
